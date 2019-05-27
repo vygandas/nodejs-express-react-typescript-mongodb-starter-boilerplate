@@ -2,10 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import PublicHome from './views/PublicHome';
 import { HashRouter, Route } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle<{light?: boolean}>`
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: ${props => (props.light ? 'white' : 'black')};
+  }
+`;
 
 const App: React.FC = () => {
   return (
     <MainWrapper>
+      <GlobalStyle light={true} />
       <HashRouter hashType='noslash'>
         <Route path="/" exact component={PublicHome} />
       </HashRouter>

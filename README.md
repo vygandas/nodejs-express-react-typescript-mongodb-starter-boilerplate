@@ -7,5 +7,5 @@ There're common interfaces separated into 3rd package and included both in `api`
 
 1. Do `npm i` on `client` and `api`
 2. Fill in `.env` values (For mongodb you can use mLabs)
-3. Start backend server `cd api/ && npm run dev`
+3. Start backend server `cd api/ && npm run build && npm run dev`
 4. Start client server `cd client/ && npm start`

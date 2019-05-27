@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import IUser from "@cartamp/interfaces/IUser";
+import IUser from "@project/interfaces/IUser";
 import moment = require("moment");
 
 export const sampleController = (req: Request, res: Response, next: NextFunction) => {

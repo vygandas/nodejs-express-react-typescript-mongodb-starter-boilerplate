@@ -1,0 +1,22 @@
+{
+  "name": "@cartamp/interfaces",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch & nodemon dist",
+    "test": "tsc && mocha dist/**/*.spec.js",
+    "lint": "eslint src --ext ts",
+    "tsc": "tsc"
+  },
+  "author": "Vygandas Pliasas <vygandas@rinkoda.lt> (https://www.rinkoda.com)",
+  "license": "GNU v3",
+  "devDependencies": {
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "@types/mocha": "^5.2.6"
+  }
+}

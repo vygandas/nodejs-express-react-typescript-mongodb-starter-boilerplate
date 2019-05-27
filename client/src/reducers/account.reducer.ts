@@ -13,7 +13,7 @@ const initialState = {
 export const account = (state: IState = initialState, action: IAction<typeof accountActionTypes>) => {
     switch (action.type) {
     case accountActionTypes.GET_USER:
-        return { ...state, user: <IUser>action.payload };
+        return { ...state, user: action.payload as IUser };
     default:
         return state;
     }

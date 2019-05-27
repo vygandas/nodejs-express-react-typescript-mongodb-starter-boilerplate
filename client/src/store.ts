@@ -4,8 +4,8 @@ import * as reducers from './reducers';
 import { IWindow } from './interfaces/IWindow';
 
 const composeEnhancers =
-    typeof window === 'object' && (<IWindow>window).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-        ? (<IWindow>window).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+    typeof window === 'object' && (window as IWindow).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+        ? (window as IWindow).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
             // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
         })
         : compose;

@@ -1,3 +1,4 @@
+import './utils/database';
 import App from './App';
 
 const port: number = parseInt(process.env.PORT) || 3333;

@@ -1,5 +1,6 @@
 import * as express from 'express';
 import { sampleController } from './controllers/dummy/sampleController';
+import { authController } from './controllers/auth';
 
 var createError = require("http-errors");
 var path = require("path");
@@ -42,6 +43,11 @@ class App {
          * START CUSTOM ROUTES
          */
         router.get('/', sampleController);
+        
+        router.get('/users', authController.getAllUsers);
+
+        router.post('/signup', authController.create);
+        router.post('/signin', authController.authenticate);
         /**
          * END CUSTOM ROUTES
          */

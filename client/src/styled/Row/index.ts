@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-export const Row = styled.div<{
+interface IRow {
     alignItems?: 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch' | 'normal'
-}>`
+}
+
+export const Row = styled.div<IRow>`
     position: relative;
     width: 100%;
     display: flex;

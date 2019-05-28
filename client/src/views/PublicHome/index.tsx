@@ -4,6 +4,7 @@ import NavItem from '../../styled/NavItem';
 import { Container } from '../../styled/Container';
 import { Row } from '../../styled/Row';
 import { Column } from '../../styled/Column';
+import { Code, Paragraph } from "../../styled/Text";
 
 const PublicHome: React.FC = () => {
   return (
@@ -26,20 +27,3 @@ const PublicHome: React.FC = () => {
 }
 
 export default PublicHome;
-
-const Header = styled.header`
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-`;
-
-const Code = styled.code`
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-`;
-
-const Paragraph = styled.p``;

@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const NavItem = styled(Link)<{
-  color?: string;
-  colorActive?: string;
-  colorHover?: string;
-}>`
+interface INavItem {
+    color?: string;
+    colorActive?: string;
+    colorHover?: string;
+}
+
+const NavItem = styled(Link)<INavItem>`
   color: ${props => props.color || '#6d6d6d'};
   text-decoration: none;
   margin-right: 15px;
+  cursor: pointer;
 
   &:last-child {
     marin-right: 0;

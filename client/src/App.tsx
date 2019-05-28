@@ -5,6 +5,8 @@ import { HashRouter, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components'
 import TopNavigation from './components/TopNav';
 import { Spacer } from './styled/Spacer';
+import SignUp from "./views/SignUp";
+import SignIn from "./views/SignIn";
 
 const GlobalStyle = createGlobalStyle<{light?: boolean}>`
   body {
@@ -22,6 +24,8 @@ const App: React.FC = () => {
         <TopNavigation/>
         <Spacer/>
         <Route path="/" exact component={PublicHome} />
+        <Route path="/signup" exact component={SignUp} />
+        <Route path="/signin" exact component={SignIn} />
       </HashRouter>
     </MainWrapper>
   );

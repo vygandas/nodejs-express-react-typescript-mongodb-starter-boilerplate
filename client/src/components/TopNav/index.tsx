@@ -36,10 +36,10 @@ const TopNavigation: React.FC<IProps> = (props) => {
                         </NavItem>
                     )}
                     {!props.user && ([
-                        <NavItem to="/" key="button-signup">
+                        <NavItem to="/signup" key="button-signup">
                             Sign up
                         </NavItem>,
-                        <NavItem to="/" key="button-signin">
+                        <NavItem to="/signin" key="button-signin">
                             Sign in
                         </NavItem>
                     ])}

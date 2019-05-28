@@ -1,10 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Container } from '../../styled/Container';
-import { Row } from '../../styled/Row';
-import { Column } from '../../styled/Column';
 import { Title } from "../../styled/Text";
 import { config } from "../../config";
+import { Column, Container, Row } from "../../styled/Layout";
 
 const SignIn: React.FC = () => {
     return (

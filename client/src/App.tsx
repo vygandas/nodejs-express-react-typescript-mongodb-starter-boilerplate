@@ -4,9 +4,9 @@ import PublicHome from './views/PublicHome';
 import { HashRouter, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components'
 import TopNavigation from './components/TopNav';
-import { Spacer } from './styled/Spacer';
 import SignUp from "./views/SignUp";
 import SignIn from "./views/SignIn";
+import { Spacer } from "./styled/Layout";
 
 const GlobalStyle = createGlobalStyle<{light?: boolean}>`
   body {

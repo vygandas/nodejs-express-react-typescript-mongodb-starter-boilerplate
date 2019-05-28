@@ -1,10 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import NavItem from '../../styled/NavItem';
-import { Container } from '../../styled/Container';
-import { Row } from '../../styled/Row';
-import { Column } from '../../styled/Column';
 import { Code, Paragraph } from "../../styled/Text";
+import {Column, Container, Row} from "../../styled/Layout";
 
 const PublicHome: React.FC = () => {
   return (

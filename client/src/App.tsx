@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import PublicHome from './views/PublicHome';
 import { HashRouter, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components'
+import TopNavigation from './components/TopNav';
+import { Spacer } from './styled/Spacer';
 
 const GlobalStyle = createGlobalStyle<{light?: boolean}>`
   body {
@@ -17,6 +19,8 @@ const App: React.FC = () => {
     <MainWrapper>
       <GlobalStyle light={true} />
       <HashRouter hashType='noslash'>
+        <TopNavigation/>
+        <Spacer/>
         <Route path="/" exact component={PublicHome} />
       </HashRouter>
     </MainWrapper>

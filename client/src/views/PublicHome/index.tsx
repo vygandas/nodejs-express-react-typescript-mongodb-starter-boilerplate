@@ -1,22 +1,27 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import logo from './logo.svg';
+import styled from 'styled-components';
 import NavItem from '../../styled/NavItem';
+import { Container } from '../../styled/Container';
+import { Row } from '../../styled/Row';
+import { Column } from '../../styled/Column';
 
 const PublicHome: React.FC = () => {
   return (
-    <Header>
-        <Logo src={logo} alt="logo" />
-        <Paragraph>
-            Edit <Code>src/App.tsx</Code> and save to reload.
-        </Paragraph>
-        <NavItem
-            to='/'
-            rel="noopener noreferrer"
-        >
-            Authenticate
-        </NavItem>
-    </Header>
+    <Container>
+        <Row>
+            <Column>
+                <Paragraph>
+                    Edit <Code>src/App.tsx</Code> and save to reload.
+                </Paragraph>
+                <NavItem
+                    to='/'
+                    rel="noopener noreferrer"
+                >
+                    Authenticate
+                </NavItem>
+            </Column>
+        </Row>
+    </Container>
   );
 }
 
@@ -31,21 +36,6 @@ const Header = styled.header`
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-`;
-
-const logoRotation = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-const Logo = styled.img`
-  animation: ${logoRotation} infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
 `;
 
 const Code = styled.code`

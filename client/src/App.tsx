@@ -8,6 +8,7 @@ import SignUp from "./views/SignUp";
 import SignIn from "./views/SignIn";
 import { Spacer } from "./styled/Layout";
 import { CookiesProvider } from "react-cookie";
+import PrivateHome from './views/PrivateHome';
 
 const GlobalStyle = createGlobalStyle<{light?: boolean}>`
   body {
@@ -28,6 +29,7 @@ const App: React.FC = () => {
                     <Route path="/" exact component={PublicHome} />
                     <Route path="/signup" exact component={SignUp} />
                     <Route path="/signin" exact component={SignIn} />
+                    <Route path="/dashboard" exact component={PrivateHome} />
                 </HashRouter>
             </CookiesProvider>
         </MainWrapper>

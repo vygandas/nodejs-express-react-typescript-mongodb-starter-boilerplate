@@ -1,3 +1,5 @@
 export const accountActionTypes = {
-    GET_USER: 'GET_USER'
+    GET_USER: 'GET_USER',
+    AUTHENTICATED: 'AUTHENTICATED',
+    AUTHENTICATION_ERROR: 'AUTHENTICATION_ERROR'
 };

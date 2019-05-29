@@ -2,11 +2,16 @@ import React, {ReactNode} from 'react';
 import { Title } from "../../styled/Text";
 import { config } from "../../config";
 import { Column, Container, Row } from "../../styled/Layout";
-import {ButtonSubmit, Input, InputError, Label} from "../../styled/Forms";
-import {validateEmail} from "../../helpers/validators";
+import { ButtonSubmit, Input, InputError, Label } from "../../styled/Forms";
+import { validateEmail } from "../../helpers/validators";
+import { connect } from "react-redux";
+import { IAccountState } from "../../reducers/account.reducer";
+import { signInAction } from "../../actions/account.actions";
 
 interface IProps {
-
+    errorMessage: string;
+    history: any;
+    signInAction: typeof signInAction;
 }
 
 interface IState {
@@ -35,7 +40,12 @@ class SignUp extends React.PureComponent<IProps, IState> {
 
     formSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         event.preventDefault();
-        this.validate();
+        if (this.validate()) {
+            this.props.signInAction({
+                email: '',
+                password: ''
+            }, this.props.history);
+        }
     };
 
     validate = () => {
@@ -70,6 +80,16 @@ class SignUp extends React.PureComponent<IProps, IState> {
 
         return isValid;
     };
+
+    errorMessage() {
+        if (this.props.errorMessage) {
+            return (
+                <div className="info-red">
+                    {this.props.errorMessage}
+                </div>
+            );
+        }
+    }
 
     render (): ReactNode {
         return (
@@ -128,6 +148,7 @@ class SignUp extends React.PureComponent<IProps, IState> {
                                 Sign Up
                             </ButtonSubmit>
                         </form>
+                        {this.errorMessage()}
                     </Column>
                 </Row>
             </Container>
@@ -135,4 +156,8 @@ class SignUp extends React.PureComponent<IProps, IState> {
     }
 }
 
-export default SignUp;
+export default connect(
+    (state: { account: IAccountState }) => ({ errorMessage: state.account.error }),
+    {
+        signInAction
+    })(SignUp);
